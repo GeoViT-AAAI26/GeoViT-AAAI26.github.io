@@ -58,10 +58,6 @@
   <script src="./GeoViT_files/bulma-carousel.min.js"></script>
   <script src="./GeoViT_files/bulma-slider.min.js"></script>
   <script src="./GeoViT_files/index.js"></script>
-  
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
 <style type="text/css">.lf-progress {
   -webkit-appearance: none;
   -moz-apperance: none;
@@ -303,7 +299,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-2 publication-title"> A Study of Finetuning Video Transformers for Multi-view Geometry Tasks </h1> 
+          <h1 class="title is-1 publication-title"><img id="logo" width="5%" src="./GeoViT_files/icon_6.jpg"> A Study of Finetuning Video Transformers for Multi-view Geometry Tasks </h1>
           <h1 class="title is-4 publication-title">AAAI 2026</h1> 
           <div class="is-size-5 publication-authors">
             <span class="author-block">
@@ -362,7 +358,7 @@
               </span>
 
               <span class="link-block">
-                <a href="GeoViT_files/NEP_video_demo_slides_wo_audio.pdf" class="external-link button is-normal is-rounded is-dark">
+                <a href="GeoViT_files/GeoViT_video_demo_slides_wo_audio.pdf" class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <svg class="svg-inline--fa fa-file-pdf fa-w-12" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="file-pdf" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg=""><path fill="currentColor" d="M181.9 256.1c-5-16-4.9-46.9-2-46.9 8.4 0 7.6 36.9 2 46.9zm-1.7 47.2c-7.7 20.2-17.3 43.3-28.4 62.7 18.3-7 39-17.2 62.9-21.9-12.7-9.6-24.9-23.4-34.5-40.8zM86.1 428.1c0 .8 13.2-5.4 34.9-40.2-6.7 6.3-29.1 24.5-34.9 40.2zM248 160h136v328c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V24C0 10.7 10.7 0 24 0h200v136c0 13.2 10.8 24 24 24zm-8 171.8c-20-12.2-33.3-29-42.7-53.8 4.5-18.5 11.6-46.6 6.2-64.2-4.7-29.4-42.4-26.5-47.8-6.8-5 18.3-.4 44.1 8.1 77-11.6 27.6-28.7 64.6-40.8 85.8-.1 0-.1.1-.2.1-27.1 13.9-73.6 44.5-54.5 68 5.6 6.9 16 10 21.5 10 17.9 0 35.7-18 61.1-61.8 25.8-8.5 54.1-19.1 79-23.2 21.7 11.8 47.1 19.5 64 19.5 29.2 0 31.2-32 19.7-43.4-13.9-13.6-54.3-9.7-73.6-7.2zM377 105L279 7c-4.5-4.5-10.6-7-17-7h-6v128h128v-6.1c0-6.3-2.5-12.4-7-16.9zm-74.1 255.3c4.1-2.7-2.5-11.9-42.8-9 37.1 15.8 42.8 9 42.8 9z"></path></svg><!-- <i class="fas fa-file-pdf"></i> Font Awesome fontawesome.com -->
                   </span>
@@ -374,8 +370,7 @@
           <br>
           <h2 class="subtitle has-text-justified">
             <b>TL;DR:</b> 
-            We demonstrate that general-purpose video foundation model can be transferred to geometric tasks such as optical flow estimation, stereo matching and two-view depth estimation, achieving strong results.
-
+            This paper demonstrates that video-pretrained vision transformers can be directly fine-tuned for multi-view geometry tasks like optical flow, depth, and stereo with minimal adaptation. 
 
           </h2>
           <!--
@@ -390,7 +385,7 @@
 </section>
 
 <video controls style="width: 1024px; height: auto; display: block; margin: 0 auto;">
-    <source src="GeoViT_files/NEP_video_demo_wt_subtitle.mp4" type="video/mp4">
+    <source src="GeoViT_files/GeoViT_video_demo_wt_subtitle.mp4" type="video/mp4">
     Your browser does not support the video tag.
 </video>
       
@@ -403,15 +398,14 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            This paper presents an investigation of vision transformer learning for multi-view geometry tasks, such as optical flow estimation, by fine-tuning video foundation models. Unlike previous methods that involve custom architectural designs and task-specific pretraining, our research finds that general-purpose models pretrained on videos can be readily transferred to multi-view problems with minimal adaptation. The core insight is that general-purpose attention between patches learns temporal and spatial information for geometric reasoning. We demonstrate that appending a linear decoder to the Transformer backbone produces satisfactory results, and iterative refinement can further elevate performance to state-of-the-art levels. This conceptually simple approach achieves top cross-dataset generalization results for optical flow estimation with end-point error (EPE) of 0.69, 1.78, and 3.15 on the Sintel clean, Sintel final, and KITTI datasets, respectively. Our method additionally establishes a new record on the online test benchmark with EPE values of 0.79, 1.88, and F1 value of 3.79. Applications to 3D depth estimation and stereo matching also show strong performance, illustrating the ver- satility of video-pretrained models in addressing geometric vision tasks.
-
+            This paper presents an investigation of vision transformer learning for multi-view geometry tasks, such as optical flow estimation, by fine-tuning video foundation models. Unlike previous methods that involve custom architectural designs and task-specific pretraining, our research finds that general-purpose models pretrained on videos can be readily transferred to multi-view problems with minimal adaptation. The core insight is that general-purpose attention between patches learns temporal and spatial information for geometric reasoning. We demonstrate that appending a linear decoder to the Transformer backbone produces satisfactory results, and iterative refinement can further elevate performance to state-of-the-art levels. This conceptually simple approach achieves top cross-dataset generalization results for optical flow estimation with end-point error (EPE) of 0.69, 1.78, and 3.15 on the Sintel clean, Sintel final, and KITTI datasets, respectively. Our method additionally establishes a new record on the online test benchmark with EPE values of 0.79, 1.88, and F1 value of 3.79. Applications to 3D depth estimation and stereo matching also show strong performance, illustrating the versatility of video-pretrained models in addressing geometric vision tasks.
 
           </p>
 
     </div>
     <img width="95%" src="./GeoViT_files/overview.png">
     <br>
-    <figcaption style="font-size: 18px;font-family: &#39;Times New Roman&#39;, Times, serif;" align="left">Figure 1. <strong>Overview of GeoViT.</strong>Part (a) presents adaptation of positional embeddings in pretrained 3D ViTs for two-frame tasks. The pretrained <span style="background-color: rgb(113,150,108); padding: 2px 4px; border-radius: 3px;">spatial Pos. Embd.</span> are interpolated to match the desired input size. The pretrained <span style="background-color: rgb(146,117,145); padding: 2px 4px; border-radius: 3px;">temporal Pos. Embd.</span>, which accounts for 8 frames, is split into two halves. The average of the first half and second half corresponds to the temporal embedding of the <span style="background-color: rgb(235,159,131); padding: 2px 4px; border-radius: 3px;">source image</span> and <span style="background-color: rgb(108,141,165); padding: 2px 4px; border-radius: 3px;">target image</span>, respectively. Part (b) exhibits our iterative refinement decoding pipeline, using optical flow for illustration. The input target image is dynamically warped based on the last-step prediction \(g_{t-1}\) so that the input pair corresponds to the ground truth residual for this step. Then the source and (warped) target images are patchified, added with adapted positional embeddings, and fed to the pretrained 3D ViT for feature extraction. The decoder accepts <span style="background-color: rgb(250,227,219); padding: 2px 4px; border-radius: 3px;">source image features</span> and the last-step prediction (\(g_{t-1}\)) and produces its correction \(\Delta g_t\). Adding \(g_{t-1}\) and its correction gives the current-step prediction \(g_{t}\). </figcaption>
+    <figcaption style="font-size: 18px;font-family: &#39;Times New Roman&#39;, Times, serif;" align="left">Figure 1. Overview of Next-Editing-token Prediction. The input sequence is comprised of: 1) <span style="color: rgb(162,32,59);">text embeddings</span>, extracted from FLAN-T5, 2) <span style="color: rgb(39,79,44);">source image embeddings</span>, tokenized by VQGAN, and 3) <span style="color: rgb(70,177,225);">mask embeddings</span>, a sequence of interleaved editing and non-editing embeddings. The output <span style="color: rgb(186,177,141);">editing tokens</span> (in raster scan order) are filled back to the source image based on the editing mask. </figcaption>
 </div></div></div></section>
 
 
@@ -424,81 +418,75 @@
         <h2 class="title is-3">Method</h2>
         <div class="content has-text-justified">
           <p>
-            Our work transfers the encoder in video foundation models to multi-view geometry tasks. Any video foundation model whose encoder follows a transformer architecture can be used. To process the video data, the transformer splits the spatio-temporal data into 3D patches, adds spatial and temporal positional encodings, and then feeds the visual tokens into the self-attention blocks.
+            Our project introduces an innovative two-stage training framework for Next Editing Prediction (NEP). In the first stage, we develop RLlamaGen, a novel text-to-image (T2I) model designed for arbitrary-order full image generation and zero-shot local editing, enabling flexible and precise image creation. In the second stage, we reframe image editing as a next editing-token prediction task, simplifying the learning process to focus solely on regeneration. This approach enhances efficiency and significantly improves editing quality. Additionally, we explore test-time scaling behaviors by integrating NEP into an iterative refinement loop, optimizing performance and output quality.
 
-            To adapt pretrained 3D ViTs for two-frame tasks, we first interpolate the 2D spatial positional encodings to match the desired input size in the fine-tuning stage. See Figure 1(a) for a visualized demonstration.
-          </p>
-          <p>
-            Then we incorporate an iterative refinement mechanism to the 3D ViT.
-            Given an image pair \(I_1, I_2\), the residual geometric property \(\Delta g_t\) at each iteration \(t\) is predicted as follows:
-          </p>
 
-          <div style="text-align: center;">
-            \[
-            \Delta g_t = F_{\text{dec}}(F_{\text{enc}}(I_1, \text{warp}(I_2, g_{t-1})), g_{t-1}),
-            \]
-            \[
-            g_t = g_{t-1} + \Delta g_t,
-            \]
-          </div>
-
-          <p>
-            where \(F_{\text{enc}}\) denotes a spatiotemporal ViT that takes (warped) image pairs as input and returns features corresponding to source images. 
-            The source image features together with the current prediction are fed to the decoder \(F_{\text{dec}}\) to predict the residuals.
-            The decoder is instantiated as a ConvGRU unit following RAFT.
-            The warping operation takes an image as input and outputs another image according to the geometrical property \(g_{t-1}\). The warping operation for optical flow estimation and stereo matching is straightforward. For 3D depth estimation, we first convert the depth representation to pixel displacement using camera parameters, and convert the prediction results back to depth.
-            The predicted residual is then aggregated with the prediction of the previous step. See Figure 1(b) for a demonstration.
           </p>
 
     </div>
+
+    <h2 class="subtitle has-text-justified"></h2>
+      <b>NEP Pre-trainig</b> 
+      <div class="content has-text-justified">
+      <p>
+      To address LlamaGen’s limitation of generating image tokens solely in raster scan order, we extend it to create RllamaGen, which supports generating image tokens in any user-specified order, enabling flexible, arbitrary-order generation. To add order awareness to the model, following σ-gpts and RAR, we learn an extra sequence of positional embeddings, which is shuffled based on a random order to define the generation sequence. For each input image token, the positional embedding corresponding to the next token in the assigned order is added.
+    </p>
+    </div>
+    <br>
+    <img width="80%" src="./GeoViT_files/fig_zero_shot_editing.jpg" class="center">
+    <figcaption style="font-size: 18px;font-family: &#39;Times New Roman&#39;, Times, serif;" align="center">Figure 2. Examples of RLlamaGen's zero-shot editing capability. It can make fine-grained edits such as adding external objects (ice cream in example #1), changing the state of input objects (cabinet door open → closed in example #2), changing the semantics (chips → fries in example #3), and changing the color (white → red in example #4). </figcaption>
+
+
+
+    <h2 class="subtitle has-text-justified"></h2>
+      <b>NEP: Next-Editing-token Prediction</b> 
+      <div class="content has-text-justified">
+      <p>
+        NEP leverages three types of conditioning for region-based editing: 1) text instructions tokens, 2) source images tokens, and 3) editing region masks tokens. The tokenization of text instructions and images remains consistent with the pre-training stage. Editing region conditioning sequences are derived from a pixel-level mask. We firstly patchify the pixel-level editing mask by max-pooling each non-overlapping sliding window. Subsequently, we flatten the patched mask into a sequence. The masking sequence is tokenized by querying a two-sized codebook comprising an editing embedding and a non-editing embedding
+    </p>
+  </div>
+    <br>
+    <img width="80%" src="./GeoViT_files/fig_qualitative_compare.jpg" class="center">
+    <figcaption style="font-size: 18px;font-family: &#39;Times New Roman&#39;, Times, serif;" align="center">Figure 3. Comparative editing results. This demonstrates that our approach can make more faithful edits to source images, either by updating objects (case #1, #2), or making fine-grained edits (case #3). </figcaption>
+
+
+
+
+
+    <h2 class="subtitle has-text-justified"></h2>
+      <b>Test-time Scaling of NEP</b> 
+      <div class="content has-text-justified">
+      <p>
+        NEP can be employed to support test-time scaling by integrating it into a self-improving loop. In each refinement step, prior to NEP, a revision region is proposed. Existing image reward models such as ImageReward usually produce a single value for the full image. To obtain token-level dense quality scores, we calculate Grad-CAM values regarding the critic model (i.e., CLIP-ViT-B/32). These values reflect each token’s contribution to the overall image quality score, measured by a reward model. Positions that correspond to the K lowest scores are identified as the revision regions. During revision, we adopt NEP to regenerate tokens in this region,  conditioning them on the remaining high-quality tokens.  After NEP, a reward model evaluates whether the revised image surpasses the original,  determining whether to accept or reject the revision.  To further improve quality,  for NEP, we apply a rejection sampling strategy, regenerating tokens at the revision positions in multiple random orders and selecting the revision with the highest quality score.  This approach demonstrates strong scaling potential,  suggesting that effective revision of initial generations can significantly enhance performance.
+
+    </p>
+  </div>
+    <br>
+    <img width="95%" src="./GeoViT_files/fig_self_improving.jpg" class="center">
+    <figcaption style="font-size: 18px;font-family: &#39;Times New Roman&#39;, Times, serif;" align="center">Figure 4. Comparative editing results. This demonstrates that NEP can make more faithful edits to source images, either by updating objects (case #1, #2), or making fine-grained edits (case #3). </figcaption>
+
+
   </div></div></div></section>
 
 
-  <section class="section">
+<!-- 
+<section class="section">
   <div class="container is-max-desktop">
-    <!-- Method. -->
     <div class="columns is-centered has-text-centered">
       <div class="column">
-        <h2 class="title is-3">Experiments</h2>
+        <h2 class="title is-3">Video Demo</h2>
         <div class="content has-text-justified">
-          <p>
-            We conduct comprehensive experiments qualitatively and quantitatively for optical flow estimation, stereo matching and 3D depth estimation.
-          </p>
-
     </div>
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <iframe width="900" height="510" src="./GeoViT_files/demo_all_12.16.html">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</div></div></section>-->
 
-    <h2 class="title is-4">Experiments on optical flow estimation</h2>      
-    <br>
-    <img width="70%" src="./GeoViT_files/table_flow_CT.png" class="center">
-    <figcaption style="font-size: 18px;font-family: &#39;Times New Roman&#39;, Times, serif;" align="center">Table 1. <strong>Experiments on Sintel and KITTI datasets.</strong> `A' denotes training on the autoflow dataset. `C + T' denotes training sequentially on the FlyingChairs and FlyingThings datasets. <sup>†</sup> represents evaluation with tiling technique. </figcaption>
-    <br>
-
-    <img width="70%" src="./GeoViT_files/table_flow_S.png" class="center">
-    <figcaption style="font-size: 18px;font-family: &#39;Times New Roman&#39;, Times, serif;" align="center">Table 2. <strong>Experiments on Sintel benchmark.</strong>'C + K + S + K + H' denotes finetuning on the combined Sintel, KITTI, and HD1K training sets after 'C + T' training. * denotes methods with warm-start proposed in RAFT, where the flow is initialized with previous image pair flow estimation.<sup>†</sup> represents evaluation with tiling technique. Our approach ranks 1st on the Sintel benchmark.</figcaption>
-    <br>
-
-    <img width="70%" src="./GeoViT_files/table_flow_K.png" class="center">
-    <figcaption style="font-size: 18px;font-family: &#39;Times New Roman&#39;, Times, serif;" align="center">Table 3. <strong>Experiments on KITTI benchmark.</strong>'C + K + S + K + H' denotes finetuning on the combined Sintel, KITTI, and HD1K training sets after 'C + T' training.<sup>†</sup> represents evaluation with tiling technique.</figcaption>
-    <br>
-
-    <img width="95%" src="./GeoViT_files/fig_vis_sintel.png" class="center">
-    <figcaption style="font-size: 18px;font-family: &#39;Times New Roman&#39;, Times, serif;" align="center">Figure 2. <strong>Visualized prediction comparison on Sintel (clean) dataset.</strong> Our approach is more accurate with more fine-grained estimates (human shoulder region in case #1), a higher recall of small objects (bird region in case #2), and a crisper motion boundary (case #2). The highlighted region is zoomed in for better visual comparison.</figcaption>
-    <br>
-
-
-    <h2 class="title is-4">Experiments on stereo matching</h2>
-    <img width="60%" src="./GeoViT_files/table_stereo_eth3d.png" class="center">
-    <figcaption style="font-size: 18px;font-family: &#39;Times New Roman&#39;, Times, serif;" align="center">Table 4. <strong>Stereo performance on ETH3D stereo test set.</strong> Our method achieves superior performance on two of the three metrics.</figcaption>
-    <br>
-
-    <h2 class="title is-4">Experiments on two-view depth estimation</h2>
-    <img width="70%" src="./GeoViT_files/table_depth.png" class="center">
-    <figcaption style="font-size: 18px;font-family: &#39;Times New Roman&#39;, Times, serif;" align="center">Table 5. <strong>Depth performance on RGBD-SLAM, SUN3D and Scenes11 test datasets.</strong> Our approach obtains better or comparable performance.</figcaption>
-
-
-  </div></div></div></section>
-
-
+<!-- <video controls width="40%">-->
 
 
 
